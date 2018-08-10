@@ -1,0 +1,107 @@
+<!--pages/ predetermine/index.wxml-->
+<view class='product clearfix'>
+  <view class='fl img'>
+    <image src='{{url}}'></image>
+  </view>
+  <view class='fr'>
+    <view class='title'>{{title}}</view>
+    <view class='priceNum cleafix'>
+      <view class='price fl'>￥ <text>{{price}}</text></view>
+      <view class='num fr' hidden='{{sureBtn}}'>
+        <text class='minus {{num>1? "active":""}}' bindtap='minus' data-price='{{price}}'>-</text>
+        <text class='produceNum'>{{num}}</text>
+        <text class='add' bindtap='add'  data-price='{{price}}'>+</text>
+      </view>
+      <view class='fr num_' hidden='{{!sureBtn}}'>
+        <text>{{num}}件</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 填写预定信息  -->
+<view class='info'>
+  <text>填写预定信息</text>
+</view>
+<view class='infoContent'>
+  <view class='list clearfix'>
+    <view class='fl'>
+      <image src='../../images/person.png'></image>
+    </view>
+    <view class='fr'>
+      <input placeholder='请输入您的真实姓名' placeholder-class='placeholder' value='{{name}}' bindfocus='nameTrue' bindblur='name' disabled='{{sureBtn}}'></input>
+      <text>*</text>
+    </view>
+  </view>
+  <view class='list clearfix'>
+    <view class='fl'>
+      <image src='../../images/mailbox.png'></image>
+    </view>
+    <view class='fr'>
+      <input placeholder='请输入您的邮箱' placeholder-class='placeholder' bindblur='mailbox' bindtap='phoneTrue' value='{{email}}' disabled='{{sureBtn}}'></input>
+      <text>*</text>
+    </view>
+  </view>
+  <view class='list clearfix'>
+    <view class='fl'>
+      <image src='../../images/phone.png'></image>
+    </view>
+    <view class='fr'>
+      <input placeholder='请输入您的手机号码' placeholder-class='placeholder' bindblur='phone' bindtap='emailTrue' value='{{phone}}' disabled='{{sureBtn}}'></input>
+      <text>*</text>
+    </view>
+  </view>
+  <view class='list clearfix'>
+    <view class='fl'>
+      <image src='../../images/location.png'></image>
+    </view>
+    <view class='fr'>
+      <view bindtap='selectDistrict' wx:if='{{areaInfo}}' disabled='{{sureBtn}}'>{{areaInfo}}</view>
+      <view bindtap='selectDistrict' wx:else>请选择地址</view>
+      <text>*</text>
+    </view>
+  </view>
+</view>
+
+<!-- 买家留言  -->
+<view class='message'><text>买家留言</text></view>
+<view class='messageContent'>
+  <textarea placeholder='请输入内容' placeholder-class='placeholder' bindblur='messageText' value='{{messageText}}'></textarea>
+</view>
+
+<!-- 合计  -->
+<view class='predetermine clearfix' hidden='{{sureBtn}}'>
+  <view class='fl total'>
+    合计价格
+    <text>￥</text>
+    <text>{{total}}</text>
+  </view>
+  <view class='btn fr'>
+    <navigator bindtap='nowTap'><text>立即预定</text></navigator>
+  </view>
+</view>
+
+<!-- 三级联动  -->
+<view class='shadow' hidden='{{addressMenuIsShow != true}}'></view>
+<view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+  <view class='sureNo'>
+    <text catchtap="cityCancel" class='cancel'>取消</text>
+    <text style="float: right" catchtap="citySure" class='sure'>确定</text>
+  </view>
+  <picker-view bindchange="cityChange" value="{{value}}" wx:key="">
+    <picker-view-column>
+      <view wx:for="{{provinces}}" class="picker-item">
+        {{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" class="picker-item" wx:key="">
+        {{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{areas}}" class="picker-item" wx:key="">
+        {{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+

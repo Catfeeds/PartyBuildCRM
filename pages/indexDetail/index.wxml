@@ -1,0 +1,55 @@
+<view class='indexImg'>
+  <image src='{{url}}'></image>
+</view>
+
+<view class='content'>
+
+  <view class='contentTitle clearfix'>
+    <view class='title'>{{title}}</view>
+    <view class='priceShare clearfix'>
+      <view class='fl price'>￥ <text>{{price}}</text></view>
+      <view class='fr share'>{{num}}人已分享</view>
+    </view>
+  </view>
+  <view class='line'></view>
+  <view class='rangeCase'>
+    <view class='range common'>产品范围： <text>{{range}}</text></view>
+    <view class='case common'>产品案例： <text>{{case}}</text></view>
+  </view>
+  <view class='line'></view>
+  <view class='productContent common'>产品简介： <text>{{content}}</text></view>
+  <view class='line'></view>
+  
+
+</view>
+
+<view class='btn'>
+  <view class='collect fl'>
+    <navigator bindtap='collect' data-id='{{id}}' data-collect='{{collect}}'>
+      <image src="../../images/collect_.png" wx:if="{{collect}}"></image>
+      <image src="../../images/collect.png" wx:else></image>
+      
+      <text wx:if="{{collect}}">已收藏</text>
+      <text wx:else>未收藏</text>
+    </navigator>
+  </view>
+  <view class='fr status1'  wx:if='{{status}}'>
+    <view wx:if='{{tabType}}'>
+      <navigator bindtap='experience'>产品在线体验</navigator>
+    </view>
+    <view wx:else>
+       <navigator bindtap='predetermine'>立即预定</navigator> 
+    </view>
+  </view>
+  
+  <view class='fr status2' wx:else>
+    <view wx:if='{{tabType}}'>
+      <navigator bindtap='register'>申请成为渠道商</navigator>
+      <navigator bindtap='predetermine'>立即预定</navigator>
+    </view>
+    <view wx:else>
+      <navigator bindtap='register'>申请成为渠道商</navigator>
+      <navigator bindtap='experience'>在线体验</navigator>
+    </view>
+  </view>
+</view>

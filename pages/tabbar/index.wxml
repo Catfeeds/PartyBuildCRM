@@ -1,0 +1,25 @@
+<!-- tabbar  -->
+<template name='tabbar'>
+  <view  class='tabbar'>
+    <navigator data-tab='0' bindtap='tabIndex' data-href = '/pages/index/index'>
+      <image src='../../images/1.png' hidden='{{_tabIndex == 0}}'></image>
+      <image src='../../images/1_1.png' hidden='{{_tabIndex != 0}}'></image>
+      <text class="{{_tabIndex==0? 'active':''}}">产品</text>
+    </navigator>
+    <navigator data-tab='1' bindtap='tabIndex' data-href = '/pages/news/index' >
+      <image src='../../images/2.png' hidden='{{_tabIndex == 1}}'></image>
+      <image src='../../images/2_1.png' hidden='{{_tabIndex != 1}}'></image>
+      <text class="{{_tabIndex==1? 'active':''}}">咨讯</text>
+    </navigator>
+    <navigator data-tab='2' bindtap='tabIndex' data-href = '/pages/custom/index' hidden='{{status}}' >
+      <image src='../../images/3.png' hidden='{{_tabIndex == 2}}'></image>
+      <image src='../../images/3_1.png' hidden='{{_tabIndex != 2}}'></image>
+      <text class="{{_tabIndex==2? 'active':''}}">客户</text>
+    </navigator>
+    <navigator data-tab='3' bindtap='tabIndex' data-href = '/pages/user/index' >
+      <image src='../../images/4.png' hidden='{{_tabIndex == 3}}'></image>
+      <image src='../../images/4_1.png' hidden='{{_tabIndex != 3}}'></image>
+      <text class="{{_tabIndex==3? 'active':''}}">我的</text>
+    </navigator>
+  </view>
+</template>

@@ -1,0 +1,344 @@
+/* pages/register/index.wxss */
+.bg {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.bg>image {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.logoTitle {
+  position: absolute;
+  width: 200rpx;
+  left: 50%;
+  margin-left: -100rpx;
+  text-align: center;
+  top: 12%;
+  z-index: 5
+}
+.logoTitle image {
+  display: inline-block;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+}
+.logoTitle .title {
+  margin-top: 37rpx;
+  font-family: 'HYChengXingJ' 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 48rpx;
+  text-shadow: 2rpx 11rpx 7rpx #6F0D0D;
+  color: #fff;
+}
+/* register  */
+.register {
+  position: absolute;
+  top: 45%;
+  padding: 0 30rpx;
+  z-index: 5;
+}
+.clearfix::before {
+  display: table;
+  content: '';
+}
+.clearfix::after {
+  display: table;
+  content: '';
+  clear: both;
+}
+.fl {
+  float: left
+}
+.fr {
+  float: right
+}
+.register .te {
+  /* padding: 0 30rpx 0 36rpx; */
+  background-color: #fff;
+  color: #999;
+  font-size: 30rpx;
+  display: inline-block;
+  border-radius: 6.7vw 0 0 6.7vw;
+  position: relative;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  width: 15%;
+}
+.register .te::after {
+  content: '';
+  display: inline-block;
+  width: 2rpx;
+  height: 56rpx;
+  background-color: #f0f0f0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -28rpx;
+}
+.register .phone {
+  font-size: 30rpx;
+  color: #999;
+  display: inline-block;
+  padding-left: 31rpx;
+  background-color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: calc(55% - 68rpx)
+}
+.register .phone input {
+  width: 100%;
+  height: 100%;
+}
+.register .placeholder {
+  font-size: 30rpx;
+  color: #999;
+}
+.register .getCode {
+  background-color: #C71B1B;
+  box-shadow: 0 0 2rpx #670B0B;
+  border-radius: 0 6.7vw 6.7vw 0;
+  font-size: 30rpx;
+  color: #fff;
+  display: inline-block;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  width: 35%
+}
+.register .confirmation {
+  margin-top: 50rpx;
+  width: calc(100% - 37rpx);
+  border-radius: 6.7vw;
+  padding-left: 37rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #999;
+  display: inline-block;
+  background-color: #fff;
+}
+.register .btn {
+  width: 500rpx;
+  background-color: #C71B1B;
+  color: #fff;
+  border-radius: 6.7vw;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  box-shadow: 0 0 18rpx #670B0B;
+  font-size: 36rpx;
+  margin-top: 120rpx;
+}
+.register .btn.active {
+  margin-top: 60rpx;
+}
+.register .waring {
+  margin-top: 45rpx;
+  text-align: center;
+  margin-left: calc(50% - 225rpx);
+}
+.register .waring image {
+  width: 28rpx;
+  height: 28rpx;
+  display: inline-block;
+  margin: 4rpx 10rpx 0 0;
+}
+.register .waring text {
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  width: 362rpx;
+  display: inline-block
+}
+
+/* nextText  */
+.nextText .banner {
+  width: 100%;
+  height: 200rpx;
+  position: relative
+}
+.nextText .banner image {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.nextText .banner .bannerText {
+  position: absolute;
+  left: 50rpx;
+  bottom: 77rpx;
+  font-size: 48rpx;
+  color: #fff;
+}
+.nextText .content {
+  background-color: #fff;
+  padding-bottom: 26rpx;
+}
+.nextText .banner .bannerText text {
+  font-family: 'PingFang-SC-Medium' 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30rpx;
+}
+.yourInfo,.comparyInfo {
+  padding: 43rpx 50rpx 0; 
+}
+.yourInfo text,.message text {
+  position: relative;
+  display: block;
+  padding-left: 30rpx;
+  color: #333;
+  font-size: 34rpx;
+}
+.yourInfo .title text::before,.message .title text::before {
+  content: '';
+  display: inline-block;
+  width: 6rpx;
+  height: 24rpx;
+  background-color: #C71B1B;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -12rpx;
+}
+.infoContent .list {
+  height: 90rpx;
+  width: 100%;
+  line-height: 90rpx;
+}
+.infoContent .list .fl {
+  width: 30rpx;
+  height: 31rpx;
+  margin-right: 31rpx;
+  margin-top: 31rpx
+}
+.infoContent .list:nth-of-type(3) .fl {
+  height: 23rpx;
+}
+.comparyInfo .infoContent .list:nth-of-type(2) .fl {
+  width: 24rpx;
+  height: 30rpx;
+}
+.comparyInfo .infoContent .list:nth-of-type(3) .fl {
+  width: 23rpx;
+  height: 30rpx;
+}
+.comparyInfo .infoContent .list:nth-of-type(4) .fl {
+  width: 30rpx;
+  height: 30rpx;
+}
+.infoContent .list .fl image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.infoContent .list .fr {
+  display: block;
+  height: 90rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  width: 90.5%;
+  position: relative
+}
+.infoContent .list .fr input,.infoContent .list .fr view {
+  line-height: 90rpx;
+  height: 90rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+.infoContent .list .fr .placeholder {
+  font-size: 30rpx;
+  color: #999;
+}
+.infoContent .list .fr text {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  font-size: 30rpx;
+  color: #C71B1B;
+  margin-top: -45rpx;
+}
+.message .infoContent .list:last-of-type,.message .infoContent .list:last-of-type .fr {
+  height: auto
+}
+.message .infoContent .list .fr textarea {
+  height: 160rpx;
+  border: 1px solid #c2c2c2;
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+  width: calc(100% - 20rpx);
+  padding: 10rpx;
+  font-size: 24rpx;
+}
+.btn {
+  background-color: #C71B1B;
+  border-radius: 6.7vw;
+  width: 500rpx;
+  margin-top: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  box-shadow: 0 0 18rpx #670B0B;
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index:12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+picker-view {
+  width: 100%; 
+  height: 360rpx;
+}
+.sureNo {
+  width: 100%;
+  border-bottom: 1px solid #F0F0F0;
+}
+.sureNo text {
+  width: 49.8%;
+  padding: 28rpx 0;
+  text-align: center;
+  font-size: 34rpx;
+  display: inline-block;
+  position: relative
+}
+.sureNo .cancel {
+  color: #999;
+}
+.sureNo .cancel::after {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #F0F0F0;
+  content: '';
+  top: 0;
+}
+.sureNo .sure {
+  color: #C71B1B;
+}
+.shadow {
+  background:rgba(0,0,0,1);
+  opacity:0.3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5
+}

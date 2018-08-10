@@ -1,0 +1,70 @@
+<!--pages/newDetail/index.wxml-->
+<!-- 标题区  -->
+<view class='detailtitle'>
+  <view>
+    <view class='title'><text>{{title}}</text></view>
+    <view class='note clearfix'>
+      <view class='publisher fl'>
+        <image src='../../images/person.png'></image>
+        <text>{{publisher}}</text>
+      </view>
+      <view class='timer fr'>
+        <image src='../../images/time.png'></image>
+        <text>{{create_time}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 内容区  -->
+<view class='detailContent'>
+  <view class='content'>
+    {{content}}
+  </view>
+  <view class='notes clearfix' hidden='{{!printIn}}'>
+    <view class='natigater fr'>
+      <image src='../../images/good.png' wx:if='{{good}}'></image>
+      <image src='../../images/good_.png' wx:else></image>
+      <text>{{good}}</text>
+    </view>
+    <view class='read fr'>
+      <image src='../../images/scan_.png'></image>
+      <text>{{read}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 评论区  -->
+<view class='comment' hidden='{{!printIn}}'>
+  <view class='tig'> <image src='../../images/msg.png'></image> 共{{num}}条评论</view>
+  <view class='lists' wx:for='{{lists}}'>
+    <view class='list clearfix'>
+      <view class='fl'>
+        <image src='{{item.src}}'></image>
+      </view>
+      <view class='fr'>
+        <view class='nameTime clearfix'>
+            <view class='name'>{{item.name}}</view>
+            <view class='time fr'>{{item.time}}</view>
+        </view>
+        <view class='content'>{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 输入评论  -->
+<view class='printIn' bindtap='printIn' hidden='{{printIn == true && istrue}}'>
+  <text>说说你的感想</text>
+</view>
+
+<view class='shadow' hidden='{{!istrue}}' bindtap='shadow'></view>
+<view class='textareaIn' hidden='{{!istrue}}'>
+  <view>
+    <textarea placeholder='说说你的感想' placeholder-class='placeholder' bindblur='textareaVal' value='{{textareaVal}}'></textarea>
+    <view class='clearfix'>
+      <text class='fl'>（限100字以内）</text>
+      <button class='fr' bindtap='tijiao'>发表</button>
+    </view>
+  </view>
+</view>

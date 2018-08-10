@@ -1,0 +1,31 @@
+<!--pages/predeter/index.wxml-->
+<view class="predeter-item" wx:for='{{predeterList}}'>
+    <!--这里绑定了刚才说的3个函数分别为 touchS，touchM touchE-->
+    <!--这里注意这个  style="{{item.txtStyle}}" ，这是我们一会再js中 将要设置的样式 -->
+    <view style="{{item.txtStyle}}"  >
+      <view class="predeter-item-top clearfix" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE"  data-index="{{index}}">
+        <navigator bindtap='navigatorTo' data-index="{{index}}" >
+          <view class='img fl'>
+            <image src='{{item.src}}'></image>
+          </view>
+          <view class='content fr'>
+            <view class='title'>{{item.title}}</view>
+            <view class='note clearfix'>
+              <view class='price fl'>
+                ￥ <text>{{item.price}}</text>
+              </view>
+              <view class='num fr'>{{item.num}}件</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+
+      <!--这里是左滑按钮部分----start-->
+      <view bindtap="delItem" class="posit  fr">
+          <view class="del" data-predeterid="{{item.predeter.id}}" data-index="{{index}}" catchtap="del">
+            <image src='../../images/defalut.png'></image>
+          </view>
+      </view>
+      <!--这里是左滑按钮部分----end-->
+    </view>
+</view>

@@ -1,0 +1,107 @@
+/* pages/addJournal/index.wxss */
+page {
+  background-color: #f8f8f8;
+}
+
+.fl {
+  float: left
+}
+.fr {
+  float: right
+}
+.clearfix::before {
+  display: table;
+  content: '';
+}
+.clearfix::after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+.section {
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  position: relative;
+  background-color: #fff;
+}
+
+.section image {
+  width: 12rpx;
+  height: 22rpx;
+  display: inline-block;
+}
+
+.section>view {
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+}
+
+.section .left {
+  text-align: right
+}
+
+.section .right {
+  text-align: left
+}
+
+.section picker {
+  width: 60%;
+  display: inline-block;
+  height: 100%;
+}
+
+.section .picker {
+  color: #333;
+  font-size: 32rpx;
+}
+
+/* content  */
+.content {
+  margin-top: 20rpx;
+  background-color: #fff;
+  min-height: 500rpx;
+  padding: 37rpx 31rpx;
+  color: #666;
+  font-size: 28rpx;
+  line-height: 48rpx;
+  position: relative
+}
+
+.content textarea {
+  display: block;
+  width: 100%;
+  height: 400rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.content .placeholder {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.content .btn {
+  position: absolute;
+  bottom: 30rpx;
+  width: 100%;
+  left: 0;
+  text-align: right
+}
+
+.content .btn view {
+  padding: 15rpx;
+  margin-right: 15rpx;
+  font-size: 30rpx;
+  display: inline-block
+}
+
+.content .btn .cancle {
+  color: #666;
+}
+
+.content .btn .sure {
+  color: #C71B1B
+}

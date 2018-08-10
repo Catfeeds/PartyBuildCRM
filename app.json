@@ -1,0 +1,41 @@
+{
+  "pages": [
+     
+     
+    "pages/index/index",
+    "pages/news/index",
+    "pages/newDetail/index",
+    "pages/custom/index",
+    "pages/customDetail/index",
+    "pages/journal/index",
+    "pages/addJournal/index",
+    "pages/search/index",
+    "pages/user/index",
+    "pages/indexDetail/index",
+    "pages/register/index",
+    "pages/predetermine/index",
+    "pages/info/index",
+    "pages/share/index",   
+    "pages/collect/index",
+    "pages/predeter/index",
+    "pages/predeterDetail/index",
+    "pages/productewm/index",
+    "pages/experience/index",
+    "pages/productLink/index",
+    "pages/link/index"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "#333",
+    "navigationBarBackgroundColor": "#f1f1f1",
+    "navigationBarTitleText": "之图科技CRM",
+    "navigationBarTextStyle": "black"
+  },
+  
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  
+  "debug": true
+}

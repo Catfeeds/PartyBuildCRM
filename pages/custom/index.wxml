@@ -1,0 +1,31 @@
+<!--pages/custom/index.wxml-->
+<!-- 搜索框  -->
+<view class="wxSearch-section">
+  <view class="wxSearch-pancel" bindtap='search'>
+    <view>
+      <icon class="weui-icon-search_in-box" type="search" size="15"></icon>
+      <text>搜索</text> 
+    </view>
+  </view>
+</view>
+
+<!-- 列表  -->
+<view class='lists' wx:for='{{lists}}'>
+  <view class='list clearfix' data-id='{{item.id}}' bindtap='customDetail'>
+    <view class='list_top clearfix'>
+      <view class='name_ fl'>
+        微信昵称：{{item.name_}}
+      </view>
+      <image class='right fr' src='../../images/down.png'></image>
+    </view>
+    <view class='list_button clearfix'>
+      <view class='fl name'>备注：{{item.name}}</view>
+      <view class='fr phone'>手机号码： <text>{{item.phone}}</text></view>
+    </view>
+  </view>
+</view>
+
+
+<!-- tabbar  -->
+<import src ="../tabbar/index.wxml"/>
+<template is="tabbar" data="{{_tabIndex}}" />

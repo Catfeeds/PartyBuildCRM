@@ -1,0 +1,131 @@
+/* pages/collect/index.wxss */
+page {
+  background-color: #fff;
+}
+
+.clearfix::before {
+  content: '';
+  display: table;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.fl {
+  float: left
+}
+
+.fr {
+  float: right
+}
+
+.lists {
+  padding: 0 15rpx;
+}
+
+.list {
+  width: calc(50% - 30rpx);
+  padding: 0 15rpx;
+  margin-top: 30rpx;
+}
+
+.list>view {
+  box-shadow: 0 0 10rpx #969696;
+  background-color: #fff;
+  border-radius: 10rpx; 
+  padding-bottom: 17rpx;
+}
+
+.list .img {
+  display: inline-block;
+  width: 100%;
+  height: 260rpx;
+  border-radius: 10px 10px 0 0;
+}
+
+.list .img image {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.list .content {
+  padding: 0 21rpx;
+  position: relative;
+}
+
+.list .content .title {
+  padding: 16rpx 0;
+  color: #666;
+  font-size: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.list .price {
+  color: #c71b1b;
+  font-size: 18rpx;
+}
+
+.list .price text {
+  font-size: 30rpx;
+}
+
+.list .collect {
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  bottom: 17rpx;
+  right: 21rpx;
+}
+
+.list .collect image {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+/* modal  */
+.shadow {
+background:rgba(0,0,0,1);
+  opacity:0.3;
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100vw;
+}
+
+.model {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  transform: translate(-50%,-50%);
+  border-radius: 20rpx;
+  background-color: #fff;
+  z-index: 5
+}
+
+.model .title {
+  padding: 65rpx 0;
+  text-align: center;
+  font-size: 32rpx;
+  color: #333;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.model .btn {
+  padding: 30rpx 0;
+  text-align: center;
+  color: #c71b1b;
+  font-size: 32rpx;
+}
+

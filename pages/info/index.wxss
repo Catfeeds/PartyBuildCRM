@@ -1,0 +1,139 @@
+/* pages/info/index.wxss */
+page {
+  background-color: #fff;
+}
+
+.clearfix::before {
+  display: table;
+  content: ''
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.fl {
+  float: left
+}
+
+.fr {
+  float: right
+}
+
+.lists .list {
+  border-bottom: 1px solid #F0F0F0;
+  height: 98rpx;
+  line-height: 98rpx;
+  padding: 0 30rpx;
+}
+
+.list text {
+  color: #666;
+  font-size: 30rpx;
+}
+
+.list input {
+  color: #999;
+  font-size: 30rpx;
+  line-height: 98rpx;
+  height: 98rpx;
+  outline: none;
+  border: 0;
+  display: inline-block;
+  width: 350rpx;
+  text-align: right
+}
+
+.list .placeholder {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.list image {
+  width: 26rpx;
+  height: 13rpx;
+  display: inline-block;
+  transform: rotate(-90deg);
+  margin-top: 42.5rpx;
+  margin-left: 25rpx;
+}
+
+button {
+  position: fixed;
+  z-index: 5;
+  left: 30rpx;
+  bottom: 40rpx;
+  width: calc(100% - 60rpx);
+  line-height: 80rpx;
+  height: 80rpx;
+  background-color: #C71B1B;
+  border-radius: 5.4vw;
+  color: #fff;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+
+.shadow {
+  background:rgba(0,0,0,1);
+  opacity:0.3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 8
+}
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index:12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+picker-view {
+  width: 100%; 
+  height: 360rpx;
+}
+.sureNo {
+  width: 100%;
+  border-bottom: 1px solid #F0F0F0;
+}
+.sureNo text {
+  width: 49.8%;
+  padding: 28rpx 0;
+  text-align: center;
+  font-size: 34rpx;
+  display: inline-block;
+  position: relative
+}
+.sureNo .cancel {
+  color: #999;
+}
+.sureNo .cancel::after {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #F0F0F0;
+  content: '';
+  top: 0;
+}
+.sureNo .sure {
+  color: #C71B1B;
+}

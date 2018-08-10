@@ -1,0 +1,8 @@
+<!--pages/productewm/index.wxml-->
+<view class='bg'>
+  <image src='../../images/bg_1.png'></image>
+</view>
+<view class='code'> 
+  <canvas bindtap="onPreviewQrc" hidden="{{canvasHidden}}" canvas-id="qrcCanvas"/>  
+  <view class='txt'>扫一扫上面的二维码，加入之图红盟</view>
+</view>

@@ -1,0 +1,38 @@
+<!--pages/share/index.wxml-->
+<checkbox-group>
+    <label class="checkbox" wx:for-items="{{items}}" data-value='{{item.name}}' bindtap="checkboxChange">
+        <text class="{{item.checked == true?'is_checked':''}}"></text>
+        <checkbox value="{{item.name}}" checked="{{item.checked == true}}" color='{{color}}' hidden='true'/>{{item.value}}
+        <view class='fr' catchtap='dowmUp' data-value='{{item.name}}'>
+          <image src='../../images/down.png' hidden='{{item.isClick}}'></image>
+          <image class='up' src='../../images/down.png' hidden='{{!item.isClick}}'></image>
+        </view>
+
+        <checkbox-group  hidden='{{!item.isClick}}' >
+          <label class="checkbox" wx:for="{{item.list}}" wx:for-item='list' data-value='{{list.name}}' catchtap='childChange' data-id='{{item.name}}'>
+                <text class="{{list.checked == true?'is_checked':''}}"></text>
+                <checkbox value="{{list.name}}" checked="{{list.checked == true}}" color='{{color}}' hidden='true'/>{{list.value}}
+                <view class='fr' catchtap='dowmUp'>
+                  ￥ <text>{{list.price}}</text>
+                </view>
+            </label>
+        </checkbox-group>
+
+    </label>
+</checkbox-group>
+
+
+<!-- 合计  -->
+<view class='predetermine clearfix'>
+  <view class='fl total'>
+    合计价格
+    <text>￥</text>
+    <text wx:if='{{total}}'>{{total}}</text>
+    <text wx:else>0.00</text>
+  </view>
+  <view class='btn fr'>
+    <navigator bindtap='share'><text>立即分享</text></navigator>
+  </view>
+</view>
+
+

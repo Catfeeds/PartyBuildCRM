@@ -1,0 +1,103 @@
+<!--pages/news/index.wxml-->
+<!--  导航栏  -->
+<view class="navbar"> 
+  <navigator bindtap="navbarTap" class="navbarItem {{_item==0? 'active': ''}}" data-item='0'>产品动态</navigator> 
+  <navigator bindtap="navbarTap" class="navbarItem {{_item==1? 'active': ''}}" data-item='1'>公司新闻</navigator> 
+  <navigator bindtap="navbarTap" class="navbarItem {{_item==2? 'active': ''}}" data-item='2'>行业资讯</navigator> 
+  <navigator bindtap="navbarTap" class="navbarItem {{_item==3? 'active': ''}}" data-item='3'>招标公告</navigator> 
+</view>
+<swiper class="swiper clearfix" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" circular = "{{circular}}" style='height: {{heightAuto}}' current="{{_item}}" bindchange="bindChange">  
+    <swiper-item> 
+      <view wx:for="{{news0}}" wx:for-index="index">
+        <navigator data-id='{{item.id}}' bindtap='newsDetail'>
+          <view class='itemImg'>
+            <image src="{{item.front_cover}}" class="slide-image" mode="aspectFill"/>
+          </view>    
+          <view class='title'>
+            <text>{{item.title}}</text>
+          </view>
+          <view class='nameTime clearfix'>
+            <view class='fl name'>
+              <image src='../../images/person.png'></image>
+              <text>{{item.publisher}}</text>
+            </view>
+            <view class='fr time'>
+              <image src='../../images/time.png'></image>
+              <text>{{item.create_time}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>   
+    </swiper-item>  
+    <swiper-item> 
+      <view wx:for="{{news1}}" wx:for-index="index">
+        <navigator data-id='{{item.id}}' bindtap='newsDetail'>
+          <view class='itemImg'>
+            <image src="{{item.front_cover}}" class="slide-image" mode="aspectFill"/>
+          </view>    
+          <view class='title'>
+            <text>{{item.title}}</text>
+          </view>
+          <view class='nameTime clearfix'>
+            <view class='fl name'>
+              <image src='../../images/person.png'></image>
+              <text>{{item.publisher}}</text>
+            </view>
+            <view class='fr time'>
+              <image src='../../images/time.png'></image>
+              <text>{{item.create_time}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>   
+    </swiper-item>
+    <swiper-item> 
+      <view wx:for="{{news2}}" wx:for-index="index">
+        <navigator data-id='{{item.id}}' bindtap='newsDetail'>
+          <view class='itemImg'>
+            <image src="{{item.front_cover}}" class="slide-image" mode="aspectFill"/>
+          </view>    
+          <view class='title'>
+            <text>{{item.title}}</text>
+          </view>
+          <view class='nameTime clearfix'>
+            <view class='fl name'>
+              <image src='../../images/person.png'></image>
+              <text>{{item.publisher}}</text>
+            </view>
+            <view class='fr time'>
+              <image src='../../images/time.png'></image>
+              <text>{{item.create_time}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>   
+    </swiper-item>
+    <swiper-item> 
+      <view wx:for="{{news3}}" wx:for-index="index">
+        <navigator data-id='{{item.id}}' bindtap='newsDetail'>
+          <view class='itemImg'>
+            <image src="{{item.front_cover}}" class="slide-image" mode="aspectFill"/>
+          </view>    
+          <view class='title'>
+            <text>{{item.title}}</text>
+          </view>
+          <view class='nameTime clearfix'>
+            <view class='fl name'>
+              <image src='../../images/person.png'></image>
+              <text>{{item.publisher}}</text>
+            </view>
+            <view class='fr time'>
+              <image src='../../images/time.png'></image>
+              <text>{{item.create_time}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>   
+    </swiper-item>  
+</swiper>  
+
+
+<!-- tabbar  -->
+<import src ="../tabbar/index.wxml"/>
+<template is="tabbar" data="{{_tabIndex}}" />

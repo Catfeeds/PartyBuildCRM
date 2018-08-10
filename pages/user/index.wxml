@@ -1,0 +1,40 @@
+<!--pages/user/index.wxml-->
+<view class='banner'>
+  <image src='../../images/user.png'></image>
+  <view>
+    <image src='{{userImg}}'></image>
+    <text>{{userName}}</text>
+  </view>
+</view>
+<view class='lists'>
+  <navigator class='list clearfix' bindtap='info' data-id='0'>
+    <image class='fl' src='../../images/info_1.png'></image>
+    <view class='fl'>个人信息</view>
+    <image class='fr' src='../../images/down.png'></image>
+  </navigator>
+  <navigator class='list clearfix' bindtap='info' data-id='1'>
+    <image class='fl' src='../../images/info_2.png'></image>
+    <view class='fl'>我的收藏</view>
+    <image class='fr' src='../../images/down.png'></image>
+  </navigator>
+  <navigator class='list clearfix' bindtap='info' data-id='2'>
+    <image class='fl' src='../../images/info_3.png'></image>
+    <view class='fl'>我的预定</view>
+    <image class='fr' src='../../images/down.png'></image>
+  </navigator>
+  <navigator class='list clearfix' bindtap='info' data-id='3'>
+    <image class='fl' src='../../images/info_4.png'></image>
+    <view class='fl'>产品二维码</view>
+    <image class='fr' src='../../images/down.png'></image>
+  </navigator>
+  <!-- 需判断是否为渠道商  -->
+  <navigator class='list clearfix' bindtap='info' data-id='4' hidden=''>
+    <image class='fl' src='../../images/info_5.png'></image>
+    <view class='fl'>产品链接</view>
+    <image class='fr' src='../../images/down.png'></image>
+  </navigator>
+</view>
+
+<!-- tabbar  -->
+<import src ="../tabbar/index.wxml"/>
+<template is="tabbar" data="{{_tabIndex}}" />

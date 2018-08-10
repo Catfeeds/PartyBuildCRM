@@ -1,0 +1,133 @@
+/* pages/share/index.wxss */
+page {
+  background-color: #f8f8f8;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right
+}
+
+.clearfix::before {
+  content: '';
+  display: table
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+checkbox-group>label {
+  padding-left: 80rpx;
+  display: block;
+  /* height: 96rpx; */
+  line-height: 96rpx;
+  margin-bottom: 10rpx;
+  background-color: #fff;
+  color: #333;
+  font-size: 32rpx;
+  position: relative;
+}
+
+checkbox-group>label>text {
+  width: 30rpx;
+  height: 30rpx;
+  border: 2rpx solid #c2c2c2;
+  border-radius: 100%;
+  display: inline-block;
+  position: absolute;
+  left: 30rpx;
+  top: 33rpx;
+}
+
+label text.is_checked {
+  background-color: #C71B1B;
+
+}
+
+checkbox-group>label>.fr {
+  display: inline-block;
+  padding: 42rpx 31rpx;
+  width: 22rpx;
+  height: 12rpx;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+  display: block
+}
+
+checkbox-group>label>.fr>image.up {
+  transform: rotate(180deg)
+}
+
+checkbox-group checkbox-group {
+  border-top: 1px solid #f0f0f0;
+  margin-left: -50rpx;
+}
+
+checkbox-group checkbox-group>label  {
+  padding-left: 50rpx;
+}
+
+checkbox-group checkbox-group>label>text {
+  left: 0
+}
+
+checkbox-group checkbox-group>label .fr {
+  padding: 0 31rpx;
+  width: auto;
+  height: auto;
+  font-size: 18rpx;
+  color: #C71B1B;
+}
+
+checkbox-group checkbox-group>label .fr text {
+  font-size: 28rpx;
+}
+
+/* predetermine  */
+.predetermine {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  box-shadow: -1px -1px 1px rgba(150,150,150,0.2) ;
+  height: 98rpx;
+  width: 100%;
+  padding: 0 30rpx;
+}
+.predetermine .total {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 98rpx;
+}
+.predetermine .total text {
+  color: #C71B1B;
+  font-size: 42rpx;
+}
+.predetermine .total text:first-of-type {
+  margin-left: 29rpx;
+  font-size: 26rpx;
+}
+
+.predetermine .btn navigator {
+  background: -webkit-linear-gradient(left, #C71B1B , #ED5858); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #C71B1B, #ED5858); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #C71B1B, #ED5858); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #C71B1B , #ED5858); /* 标准的语法 */
+  border-radius: 0 6.7vw 6.7vw 0;
+   padding: 21rpx 63rpx; 
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+  margin-top: 9rpx;
+  margin-right: 60rpx;
+}

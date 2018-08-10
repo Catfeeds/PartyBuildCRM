@@ -1,0 +1,20 @@
+<view class='lists' wx:for='{{lists}}'>
+  <view class='title clearfix'>
+    <view class='fl'>{{item.title}}</view>
+    <view class='fr price'>￥<text>{{item.price}}</text></view>
+  </view>
+  <view class='list' wx:for='{{item.list}}' wx:for-item='items' data-url='{{items.url}}' bindtap='link'>
+    <text class='note'></text>
+    <text class='content'>{{items.content}}</text>
+  </view>
+</view>
+
+<!-- 初始提示  -->
+<view class='linkIn' hidden='{{quit}}' >
+  <text>
+    <text class='note'></text>
+    <text class='content'>{{first}}</text>
+  </text>
+  <image src='../../images/nextLink.png'></image>
+  <image src='../../images/quit.png' bindtap='quit'></image>
+</view>

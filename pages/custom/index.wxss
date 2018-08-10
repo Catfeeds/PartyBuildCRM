@@ -1,0 +1,118 @@
+/* pages/custom/index.wxss */
+@import "/pages/tabbar/index.wxss";
+.fl {
+  float: left
+}
+.fr {
+  float: right
+}
+.clearfix::before {
+  display: table;
+  content: '';
+}
+.clearfix::after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+.wxSearch-section {
+  height: 98rpx;
+  width: calc(100% - 120rpx);
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 60rpx;
+}
+
+.wxSearch-section .wxSearch-pancel {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 19rpx;
+  background-color: #f8f8f8;
+  border-radius: 2px;
+  text-align: center;
+  width: 100%;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.wxSearch-section .wxSearch-pancel view {
+  position: relative;
+}
+
+.wxSearch-section .wxSearch-pancel view text {
+  padding-left: 45rpx;
+}
+
+.wxSearch-section .weui-icon-search_in-box {
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  margin: -15rpx 0 0 -60rpx;
+  position: absolute;
+}
+
+
+/* lists  */
+.lists {
+  padding: 0 30rpx;
+  margin-top: 118rpx;
+  margin-bottom: 100rpx;
+}
+
+.lists .list {
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.lists .list .list_top {
+  border-bottom: 1px solid #F0F0F0;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 32rpx;
+}
+
+.lists .list .list_top .name_ {
+  color: #333;
+  font-size: 30rpx;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lists .list .list_top image {
+  width: 22rpx;
+  height: 12rpx;
+  transform: rotate(-90deg);
+  margin-top: 34rpx;
+}
+
+.lists .list .list_button {
+  height: 72rpx;
+  line-height: 72rpx;
+  padding:0 32rpx;
+}
+
+.lists .list .list_button .name {
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.lists .list .list_button .phone {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.lists .list .list_button .phone text {
+  color: #C71B1B
+}

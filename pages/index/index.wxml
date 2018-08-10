@@ -1,0 +1,133 @@
+<!--  导航栏  -->
+<view class="navbar"> 
+  <navigator bindtap="navbarTap" class="navbarItem {{_item==0? 'active': ''}}" data-item='0'>硬件产品</navigator> 
+  <navigator bindtap="navbarTap" class="navbarItem {{_item==1? 'active': ''}}" data-item='1'>软件产品</navigator> 
+  <navigator bindtap="selectNav" class='navbarItem'>
+    排序 
+    <image src='../../images/down.png' mode='widthFix'></image>
+  </navigator>
+</view> 
+
+<!-- 排序  -->
+<view class="sort" hidden='{{_sort != true}}'>
+  <view>
+    <view class="sortItem {{_sortItem==0? 'active': ''}}" bindtap='sortTap' data-sort='0'>
+      <image src='../../images/time_.png' hidden="{{_sortItem != 0}}" class='img1'></image>
+      <image src='../../images/time.png' hidden="{{_sortItem != 1}}" class='img1'></image>
+      <text>上传时间</text>
+      <image src='../../images/checked.png' class='right' hidden="{{_sortItem != 0}}"></image>
+    </view>
+    <view class="sortItem {{_sortItem==1? 'active': ''}}" bindtap='sortTap' data-sort='1'>
+      <image src='../../images/share.png' hidden="{{_sortItem != 0}}" class='img1'></image>
+      <image src='../../images/share_.png' hidden="{{_sortItem != 1}}" class='img1'></image>
+      <text>分享次数</text>
+      <image src='../../images/checked.png' class='right' hidden="{{_sortItem != 1}}"></image>
+    </view>
+  </view>
+</view>
+
+<view class='itemContent'>
+  <!-- 硬件产品--> 
+  <view hidden='{{_item != 0}}' bindtouchmove="handletouchmove" bindtouchend="handletouchend"> 
+
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+  <button open-type="getUserInfo" hover-class='none' bindgetuserinfo="getUserInfoFun">获取手机号</button> 
+
+
+    <!--  瀑布流  -->
+    <view class="content">
+      <view class="left">
+        <block wx:for="{{note}}" wx:key="">
+          <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
+        </block>
+      </view>
+      <view class="right">
+        <block wx:for="{{note}}" wx:key="">
+          <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+        </block>
+      </view>
+    </view>
+    <!--  下面是一个模块 -->
+    <template name="item">
+      <view class="item">
+      <navigator data-item='{{itemIndex}}' bindtap='navigatorItem' data-id='{{id}}'>
+        <image class="item-img" src="{{front_cover}}" mode="widthFix"></image>
+          <view class="item-title-box">
+            <p  class="item-title">{{title}}</p> 
+          </view>
+          <view class="name">    
+            <text class="name-title"><text>￥</text>{{price}}</text>
+            <view class="heart_" catchtap='collect' data-collect = "{{collect}}" data-id='{{id}}'>
+              <image class="heart" src="../../images/collect_.png" wx:if="{{collect}}"  ></image>
+              <image class="heart" src="../../images/collect.png" wx:else  ></image>
+            </view>
+          </view>
+      </navigator>
+    </view>
+
+    </template>     
+  </view> 
+      
+  <!-- 软件产品--> 
+  <view hidden='{{_item != 1}}' bindtouchmove="handletouchmove" bindtouchend="handletouchend"> 
+    <!--  瀑布流  -->
+    <view class="content">
+      <view class="left">
+        <block wx:for="{{note}}" wx:key="">
+          <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
+        </block>
+      </view>
+      <view class="right">
+        <block wx:for="{{note}}" wx:key="">
+          <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+        </block>
+      </view>
+    </view>
+    <!--  下面是一个模块 -->
+    <template name="item">
+      <view class="item">
+      <navigator data-item='{{itemIndex}}' bindtap='navigatorItem' data-id='{{id}}'>
+        <image class="item-img" src="{{front_cover}}" mode="widthFix"></image>
+          <view class="item-title-box">
+            <p  class="item-title">{{title}}</p> 
+          </view>
+          <view class="name">    
+            <text class="name-title"><text>￥</text>{{price}}</text>
+            <view class="heart_" catchtap='collect' data-collect = "{{collect}}" data-id='{{id}}'>
+              <image class="heart" src="../../images/collect_.png" wx:if="{{collect}}"  ></image>
+              <image class="heart" src="../../images/collect.png" wx:else  ></image>
+            </view>
+          </view>
+      </navigator>
+    </view>
+
+    </template>     
+  </view>
+  
+  
+</view>
+
+<!-- 分享按钮  -->
+<view class='shareBtn' hidden='{{!showTrue}}' hidden='{{status}}' bindtap='shareBtn'>
+  <navigator>
+    <image src='../../images/spro.png'></image>
+  </navigator>
+</view>
+
+<!-- 分享按钮的提示  -->
+<view class='shareL' hidden='{{!quit}}' >
+  <image src='../../images/shareL.png'></image>
+  <image src='../../images/quit.png' bindtap='quit'></image>
+</view>
+
+
+<!--model--> 
+<view class='shadow' hidden='{{hiddenmodalput}}'></view>  
+<view class='model' hidden='{{hiddenmodalput}}'>
+  <view class='title'>再次点击会取消收藏哦~</view>
+  <view class='btn' bindtap='sure'>我知道了</view>
+</view>
+
+<!-- tabbar  -->
+<import src ="../tabbar/index.wxml"/>
+<template is="tabbar" data="{{_tabIndex}}" />

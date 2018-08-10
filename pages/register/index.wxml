@@ -1,0 +1,133 @@
+<!--pages/register/index.wxml-->
+<view class='bg' hidden='{{confirmTrue}}'>
+  <image src='../../images/bg.png'></image>
+  <view class='logoTitle'>
+    <image src='../../images/1.jpg'></image>
+    <view class='title'>之图红盟</view>
+  </view>
+  <view class='register clearfix'>
+    <text class='te fl'>+86</text>
+    <view class='phone fl'>
+      <input placeholder='填写手机号' placeholder-class='placeholder' value='{{phoneVal}}' bindblur='phoneVal'></input>
+    </view>
+    <text class='getCode fl' wx:if="{{!isShow}}"  bindtap='getCode'>获取验证码</text>
+    <text class='getCode fl' wx:if="{{isShow}}">{{sec}}秒后重新发送</text>
+    <input placeholder='请输入验证码' placeholder-class='placeholder' class='confirmation' bindblur='confirm' value='{{confirmVal}}'></input>
+    <view class='waring clearfix' hidden='{{!noWaring}}'>
+      <image src='../../images/waring.png' class='fl'></image>
+      <text class='fl'>你所输入的手机号或验证码不正确，请重新输入</text>
+    </view>  
+    <button class='btn {{noWaring==true? "active":""}}' bindtap='nextTap'>下一步</button>
+  </view>
+</view>
+<view class='nextText' hidden='{{!confirmTrue}}'>
+  <view class='banner'>
+    <image class='bannerImg' src='../../images/registerImg.png'></image>
+    <view class='bannerText'>
+      注册
+      <text>/REGISTER</text>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='yourInfo'>
+      <view class='title'><text>个人信息</text></view>
+      <view class='infoContent'>
+        <view class='list clearfix'>
+          <view class='fl'>
+            <image src='../../images/person.png'></image>
+          </view>
+          <view class='fr'>
+            <input placeholder='请输入您的真实姓名' placeholder-class='placeholder' value='{{name}}' bindblur='name'></input>
+            <text>*</text>
+          </view>
+        </view>
+        <view class='list clearfix'>
+          <view class='fl'>
+            <image src='../../images/weixin.png'></image>
+          </view>
+          <view class='fr'>
+            <input placeholder='请输入您的微信昵称' placeholder-class='placeholder' value='{{weixin}}' bindblur='weixin'></input>
+            <text>*</text>
+          </view>
+        </view>
+        <view class='list clearfix'>
+          <view class='fl'>
+            <image src='../../images/mailbox.png'></image>
+          </view>
+          <view class='fr'>
+            <input placeholder='请输入您的邮箱' placeholder-class='placeholder' bindblur='mailbox' value='{{email}}'></input>
+            <text>*</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='message'>
+      <view class='comparyInfo'>
+        <view class='title'><text>单位信息</text></view>
+        <view class='infoContent'>
+          <view class='list clearfix'>
+            <view class='fl'>
+              <image src='../../images/compary.png'></image>
+            </view>
+            <view class='fr'>
+              <input placeholder='请输入您的单位名称' placeholder-class='placeholder' value='{{comparyName}}'  bindblur='comparyName'></input>
+              <text>*</text>
+            </view>
+          </view>
+          <view class='list clearfix'>
+            <view class='fl'>
+              <image src='../../images/place.png'></image>
+            </view>
+            <view class='fr'>
+              <input placeholder='请输入您的职位' placeholder-class='placeholder' value='{{place}}' bindblur='place'></input>
+               <text>*</text>
+            </view>
+          </view>
+          <view class='list clearfix'>
+            <view class='fl'>
+              <image src='../../images/location.png'></image>
+            </view>
+            <view class='fr'>
+              <view bindtap='selectDistrict' wx:if='{{areaInfo}}'>{{areaInfo}}</view>
+              <view bindtap='selectDistrict' wx:else>请选择地址</view>
+              <text>*</text>
+            </view>
+          </view>
+          <view class='list clearfix'>
+            <view class='fl'>
+              <image src='../../images/msg.png'></image>
+            </view>
+            <view class='fr'>
+              <textarea placeholder='请输入您申请的理由' placeholder-class='placeholder' value='{{resion}}'></textarea>
+            </view>
+          </view>
+          <button class='btn' bindtap='btn'>提交</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 三级联动  -->
+<view class='shadow' hidden='{{addressMenuIsShow != true}}'></view>
+<view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+  <view class='sureNo'>
+    <text catchtap="cityCancel" class='cancel'>取消</text>
+    <text style="float: right" catchtap="citySure" class='sure'>确定</text>
+  </view>
+  <picker-view bindchange="cityChange" value="{{value}}" wx:key="">
+    <picker-view-column>
+      <view wx:for="{{provinces}}" class="picker-item">
+        {{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" class="picker-item" wx:key="">
+        {{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{areas}}" class="picker-item" wx:key="">
+        {{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

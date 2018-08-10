@@ -1,0 +1,69 @@
+<!--pages/predeterDetail/index.wxml-->
+<view class='product clearfix'>
+  <view class='fl img'>
+    <image src='{{url}}'></image>
+  </view>
+  <view class='fr'>
+    <view class='title'>{{title}}</view>
+    <view class='priceNum cleafix'>
+      <view class='price fl'>￥ <text>{{price}}</text></view>
+      <view class='fr num_'>
+        <text>{{num}}件</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 预定信息  -->
+<view class='info'>
+  <text>预定信息</text>
+</view>
+<view class='infoContent'>
+  <view class='list clearfix'>
+    <view class='fl'>
+      <image src='../../images/person.png'></image>
+    </view>
+    <view class='fr'>
+      <input value='{{name}}' disabled></input>
+    </view>
+  </view>
+  <view class='list clearfix'>
+    <view class='fl'>
+      <image src='../../images/mailbox.png'></image>
+    </view>
+    <view class='fr'>
+      <input value='{{email}}' disabled></input>
+    </view>
+  </view>
+  <view class='list clearfix'>
+    <view class='fl'>
+      <image src='../../images/phone.png'></image>
+    </view>
+    <view class='fr'>
+      <input value='{{phone}}' disabled></input>
+    </view>
+  </view>
+  <view class='list clearfix'>
+    <view class='fl'>
+      <image src='../../images/location.png'></image>
+    </view>
+    <view class='fr'>
+      <view>{{areaInfo}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 买家留言  -->
+<view class='message' hidden='isEmpty'><text>买家留言</text></view>
+<view class='messageContent' hidden='isEmpty'>
+  <textarea placeholder='请输入内容' placeholder-class='placeholder' value='{{messageText}}'></textarea>
+</view>
+
+<!-- 合计  -->
+<view class='predetermine clearfix'>
+  <view class='fl total'>
+    合计价格
+    <text>￥</text>
+    <text>{{total}}</text>
+  </view>
+</view>

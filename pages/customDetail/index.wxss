@@ -1,0 +1,243 @@
+/* pages/customDetail/index.wxss */
+page {
+  background-color: #F8F8F8;
+}
+
+.fl {
+  float: left
+}
+.fr {
+  float: right
+}
+.clearfix::before {
+  display: table;
+  content: '';
+}
+.clearfix::after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+.navbar{ 
+ flex: none; 
+ display: flex; 
+ background: #fff; 
+ box-shadow: 1rpx 1rpx 1rpx rgba(150,150,150,0.2) ;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ z-index: 10;
+} 
+.navbar .navbarItem{ 
+ position: relative; 
+ flex: auto; 
+ text-align: center; 
+ line-height: 80rpx; 
+ font-size: 30rpx;
+ margin-bottom: 2rpx;
+} 
+.navbar .navbarItem:last-of-type image {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 30rpx;
+  bottom: 33rpx;
+  width: 22rpx;
+  height: 12rpx;
+}
+.navbar .navbarItem.active{ 
+ color: #C71B1B; 
+} 
+.navbar .navbarItem.active:after{ 
+ content: ""; 
+ display: block; 
+ position: absolute; 
+ bottom: 0; 
+ left: 50%; 
+ margin-left: -32rpx;
+ right: 0; 
+ height: 4rpx;
+ width: 64rpx; 
+ background: #C71B1B; 
+} 
+
+/* swiper  */
+.swiper {
+  margin-top: 100rpx;
+  height: auto
+}
+
+/* infoLists  */
+.infoLists .lists {
+  padding-left: 31rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+
+.infoLists .lists .list {
+  border-bottom: 1px solid #F0F0F0;
+  height: 98rpx;
+  line-height: 98rpx;
+  padding-right: 31rpx;
+}
+
+.infoLists .lists .list:last-of-type {
+  border-bottom: 0;
+}
+
+.infoLists .lists .list .fl {
+  color: #666;
+  font-size: 30rpx;
+}
+
+.infoLists .lists .list .fr {
+  font-size: 30rpx;
+  color: #333;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: right;
+}
+
+.infoLists .lists .list image.fr {
+  width: 22rpx;
+  height: 12rpx;
+  transform: rotate(-90deg);
+  display: inline-block;
+  margin-top: 43rpx;
+  margin-left: 16rpx;
+}
+
+.infoLists .lists .list .placeholder {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.infoLists .info {
+  padding: 0 31rpx 35rpx;
+  background-color: #fff;
+}
+
+.infoLists .info .infoTitle {
+  height: 98rpx;
+  line-height: 98rpx;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.infoLists .info textarea {
+  width: calc(100% - 41rpx);
+  min-height: 240rpx;
+  padding: 29rpx 21rpx;
+  border: 1px solid #F0F0F0;
+  border-radius: 20rpx;
+}
+
+/* btn  */
+.btn,.btnDel {
+  position: fixed;
+  bottom: 30rpx;
+  left: 0;
+  width: 100%;
+}
+
+.btn button {
+  width: calc(100% - 60rpx);
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #C71B1B;
+  border-radius: 5.4vw;
+  color: #fff;
+  font-weight: bold;
+  font-size: 30rpx;
+  border: 0
+}
+
+.btnDel {
+  padding: 0 30rpx;
+}
+
+.btnDel button {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 30rpx;
+  width: 46vw;
+  display: inline-block;
+  border: 0
+}
+
+.btnDel button:first-of-type {
+  background: -webkit-linear-gradient(left, #FFC500 , #F7DB7A); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #FFC500, #F7DB7A); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #FFC500, #F7DB7A); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #FFC500 , #F7DB7A); /* 标准的语法 */
+  border-radius: 5.4vw 0 0 5.4vw;
+}
+
+.btnDel button:last-of-type {
+  background: -webkit-linear-gradient(left, #C71B1B ,#ED5858); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #C71B1B, #ED5858); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #C71B1B,#ED5858); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #C71B1B ,#ED5858); /* 标准的语法 */
+  border-radius: 0 5.4vw 5.4vw 0;
+}
+
+/* journal  */
+.journal {
+ 
+}
+
+.journal .list {
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  padding-left: 30rpx;
+}
+
+.journal .list .listS {
+  border-bottom: 1px solid #F0F0F0;
+  height: 98rpx;
+  line-height: 98rpx;
+}
+
+.journal .list .listS .time {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.journal .list .listS .hours {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.journal .list .listX {
+  height: 101rpx;
+  line-height: 101rpx;
+  font-size: 28rpx;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* publishBtn  */
+.publishBtn {
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  box-shadow: 0 0 21rpx #851717;
+}
+
+.publishBtn image {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%
+}

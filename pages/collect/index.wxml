@@ -1,0 +1,27 @@
+<!--pages/collect/index.wxml-->
+<view class='lists clearfix'>
+  <view class='fl list'  wx:for='{{items}}' bindtap='{{toDetail}}' data-id='{{item.id}}'>
+    <view>
+      <view class='img'>
+        <image src='{{item.src}}'></image>
+      </view>
+      <view class='content'>
+        <view class='title'>{{item.title}}</view>
+        <view class='priceCollect clearfix'>
+          <view class='price fl'>￥ <text>{{item.price}}</text></view>
+          <view class='collect fr clearfix' catchtap='collect' data-id='{{item.id}}' data-collect='{{item.collect}}'>
+            <image wx:if='{{item.collect}}' src='../../images/collect_.png'></image>
+            <image wx:else src='../../images/collect.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--model--> 
+<view class='shadow' hidden='{{hiddenmodalput}}'></view>  
+<view class='model' hidden='{{hiddenmodalput}}'>
+  <view class='title'>再次点击会取消收藏哦~</view>
+  <view class='btn' bindtap='sure'>我知道了</view>
+</view>

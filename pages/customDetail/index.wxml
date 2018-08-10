@@ -1,0 +1,60 @@
+<!--pages/customDetail/index.wxml-->
+<!--  导航栏  -->
+<view class="navbar"> 
+  <navigator bindtap="navbarTap" class="navbarItem {{_item==0? 'active': ''}}" data-item='0'>客户信息</navigator> 
+  <navigator bindtap="navbarTap" class="navbarItem {{_item==1? 'active': ''}}" data-item='1'>跟进日志</navigator> 
+</view>
+<swiper class="swiper clearfix" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" circular = "{{circular}}" style='height: {{heightAuto}}' current="{{_item}}" bindchange="bindChange">  
+    <swiper-item> 
+      <view class='infoLists'>
+        <view class='lists'>
+          <view class='list clearfix'>
+            <view class='fl name_'>微信昵称：</view>
+            <input class='fr' value='{{nameValue_}}' placeholder='{{name_}}' placeholder-class='placeholder' bindblur='{{name_}}' bindtap='tip'></input>
+          </view>
+          <view class='list clearfix'>
+            <view class='fl phone'>联系电话：</view>
+            <input class='fr' value='{{phoneValue}}' placeholder='{{phone}}' placeholder-class='placeholder' bindblur='{{phone}}' bindtap='tip'></input>
+          </view>
+          <view class='list clearfix'>
+            <view class='fl name'>备注：</view>
+            <image src='../../images/down.png' class='fr'></image>
+            <input class='fr' value='{{nameValue}}' placeholder='{{name}}' placeholder-class='placeholder' bindblur='{{name}}' bindtap='tip'></input>
+          </view>
+        </view>
+        <view class='info'>
+          <view class='infoTitle'>客户信息</view>
+          <textarea placeholder='{{placeholder}}' placeholder-class='placeholder' bindblur='infoValue' bindtap='tip' value='{{infoValue}}'></textarea>
+        </view>
+
+        <!-- 按钮变化  -->
+        <view class='btn' hidden='{{noTig == true}}'>
+          <button bindtap='del'>删除</button>
+        </view>
+        <view class='btnDel' hidden='{{noTig == false}}'>
+          <button bindtap='save'>保存</button>
+          <button bindtap='del'>删除</button>
+        </view>
+
+      </view>   
+    </swiper-item>  
+    <swiper-item> 
+      <view wx:for="{{list}}" wx:for-index="index" class='journal'>
+        <view class='list clearfix' bindtap='journalDetail' data-id='{{item.id}}'>
+          <view class='listS clearfix'>
+            <view class='time fl'>{{item.time}} {{item.week}}</view>
+            <view class='hours fr'>{{item.time2}}</view>
+          </view>
+          <view class='listX'>
+            {{item.content}}
+          </view>
+        </view>
+      </view> 
+
+      <view class='publishBtn' bindtap='add'>
+        <image src='../../images/1.jpg'></image>
+      </view>  
+    </swiper-item> 
+</swiper>  
+
+

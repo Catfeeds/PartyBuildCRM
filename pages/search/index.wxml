@@ -1,0 +1,33 @@
+<!--pages/search/index.wxml-->
+<view class="weui-search-bar">
+   <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="请输入搜索内容" value="{{wxSearchData}}" bindinput="wxSearchInput" bindconfirm="wxSearchConfirm" />
+      <view class="weui-icon-clear" wx:if="{{wxSearchData.value.length > 0}}" bindtap="wxSearchClear">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+  </view>
+    <view class="weui-search-bar__cancel-btn" bindtap="back">
+         <text data-key='back'>返回</text>
+     </view>
+</view>
+
+<!-- 列表  -->
+<view class='lists' wx:for='{{lists}}'>
+  <view class='list clearfix' data-id='{{item.id}}'>
+    <view class='list_top clearfix'>
+      <view class='name_ fl'>
+        微信昵称：{{item.name_}}
+      </view>
+      <image class='right fr' src='../../images/down.png'></image>
+    </view>
+    <view class='list_button clearfix'>
+      <view class='fl name'>备注：{{item.name}}</view>
+      <view class='fr phone'>手机号码： <text>{{item.phone}}</text></view>
+    </view>
+  </view>
+</view>
+
+

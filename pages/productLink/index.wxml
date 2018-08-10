@@ -1,0 +1,21 @@
+<!--pages/productLink/index.wxml-->
+<view class='bg'>
+  <image src='../../images/bg_1.png'></image>
+</view>
+
+<view class='content'>
+  <view class='tit'>
+    <image src='../../images/link_li.png'></image>
+    <text>欢迎进入产品链接分享</text>
+  </view>
+  <navigator data-href='{{href}}'>{{href}}</navigator>
+  <view class='tig'>
+    分享链接
+  </view>
+</view>
+
+<view class='bottom'>
+  <text></text>
+  <text>将此链接分享进入之图CRM小程序</text>
+  <text></text>
+</view>

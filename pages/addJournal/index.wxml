@@ -1,0 +1,18 @@
+<!--pages/addJournal/index.wxml-->
+<view class="section clearfix">
+  <view  class='left fl' bindtap='leftTime'><image src='../../images/left.png'></image></view>
+  <picker mode="date" value="{{date}}" start="1790-01-01" end="{{2022-01-01}}" bindchange="bindDateChange" class='fl'>
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+  <view  class='right fr' bindtap='rightTime'><image src='../../images/right.png'></image></view>
+</view>
+
+<view class='content'>
+  <textarea value='{{content}}' bindblur='newContent' placeholder='新建工作记录' placeholder-class='placeholder'></textarea>
+  <view class='btn'>
+    <view class='cancle' bindtap='cancle'>取消</view>
+    <view class='sure' bindtap='sure'>提交</view>
+  </view>
+</view>

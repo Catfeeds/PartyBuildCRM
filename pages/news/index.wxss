@@ -1,0 +1,123 @@
+/* pages/news/index.wxss */
+@import "/pages/tabbar/index.wxss";
+page {
+  background-color: #fff;
+}
+.navbar{ 
+ flex: none; 
+ display: flex; 
+ background: #fff; 
+ box-shadow: 1rpx 1rpx 1rpx rgba(150,150,150,0.2) ;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ z-index: 10;
+} 
+.navbar .navbarItem{ 
+ position: relative; 
+ flex: auto; 
+ text-align: center; 
+ line-height: 80rpx; 
+ font-size: 30rpx;
+ margin-bottom: 2rpx;
+} 
+.navbar .navbarItem:last-of-type image {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 30rpx;
+  bottom: 33rpx;
+  width: 22rpx;
+  height: 12rpx;
+}
+.navbar .navbarItem.active{ 
+ color: #C71B1B; 
+} 
+.navbar .navbarItem.active:after{ 
+ content: ""; 
+ display: block; 
+ position: absolute; 
+ bottom: 0; 
+ left: 50%; 
+ margin-left: -32rpx;
+ right: 0; 
+ height: 4rpx;
+ width: 64rpx; 
+ background: #C71B1B; 
+} 
+
+.swiper {
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+  height: auto
+}
+/* swiper-item  */
+swiper-item navigator {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.itemImg {
+  width: 100%;
+  height: 360rpx;
+  background-color: #C2C2C2;
+}
+.itemImg image {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+swiper-item .title {
+  display: block;
+  position: absolute;
+  height: 70rpx;
+  bottom: 95rpx;
+  left: 30rpx;
+  width: calc(100% - 120rpx);
+  box-shadow: 4rpx 0 18rpx #969696;
+  border-radius: 10rpx;
+  line-height: 70rpx;
+  color: #333;
+  font-size: 32rpx;
+  padding: 0 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #fff;
+  text-align: center;
+}
+swiper-item .nameTime {
+  margin-top: 35rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+swiper-item .nameTime view {
+  position: relative;
+  width: 49.5vw;
+  text-align: center
+}
+swiper-item .nameTime view:first-child::after {
+  content: '';
+  display: inline-block;
+  width: 2rpx;
+  height: 40rpx;
+  background-color: #F0F0F0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -20rpx;
+}
+swiper-item .nameTime image {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -15rpx;
+}
+swiper-item .nameTime text {
+  padding-left: 60rpx;
+}
